@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{{url_for('static',filename='icons/groupchat.png')}}" type="image/x-icon">
+    <link rel="stylesheet" href="{{url_for('static',filename='styles/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='styles/register.css')}}">
+    <title>Group Chat | Register</title>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row header justify-content-between align-items-center">
+        <div class="col-3 appinfo d-flex">
+            <div class="applogo px-2">
+                <img class="rounded-circle" src="{{url_for('static',filename='icons/groupchat.png')}}" height="30" width="30">
+            </div>
+            <div class="appname text-white px-2">Group Chat</div>
+        </div>
+        <div class="col-7 userinfo">
+            <div class="row justify-content-end px-2">
+                <button class="btn btn_to_signin btn-link btn-sm text-white">Sign In</button>
+            </div>
+        </div>
+    </div>
+    <div class="row maincontainer justify-content-center align-items-center">
+        <div class="col-md-5">
+            <form class="form p-5" enctype="multipart/form-data" method="post">
+                <div class="d-flex justify-content-center align-items-center flex-column">
+                    <div>
+                        <img src="{{url_for('static',filename='icons/user.png')}}" height="20" width="20">
+                    </div>
+                    <h6 class="text-center">-- New User Register --</h6>
+                    <p class="p-0 m-0 flashmessage text-center">Fill in every field</p>
+                </div>
+                <div class="mlform">
+                    <div class="personalinfo mldiv divactive">
+                        <div class="form-group">
+                            <label for="">Name:</label>
+                            <input type="Name" class="form-control" name="name" id="" placeholder="Full Name" required autocomplete="off">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Phone No:</label>
+                            <input type="tel" class="form-control" name="phoneno" id="" placeholder="Phone No" required autocomplete="off">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Email:</label>
+                            <input type="email" class="form-control" name="email" id="" placeholder="email@email.com" required autocomplete="off">
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center btngroup">
+                            <button type="button" class="btn mx-1 btn-sm btnhelp btn-link btn-block">Help</button>
+                            <button type="button" class="btn mx-1 btn-sm btnnext btn-link btn-block" data="1">Next</button>
+                        </div>
+                    </div>
+                    <div class="othersinfo mldiv">
+                        <div class="form-group">
+                            <label for="">Country</label>
+                            <input type="country" class="form-control" name="country" id="" placeholder="Country" required autocomplete="off">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Education Level</label>
+                            <input type="education" class="form-control" name="education" id="" placeholder="Education" required autocomplete="off">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Profession/Work</label>
+                            <input type="profession" class="form-control" name="profession" id="" placeholder="Professio/Work" required autocomplete="off">
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center btngroup">
+                            <button type="button" class="btn mx-1 btn-sm btnprev btn-link btn-block" data="1">Prev</button>
+                            <button type="button" class="btn mx-1 btn-sm btnnext btn-link btn-block" data="2">Next</button>
+                        </div>
+                    </div>
+                    <div class="systeminfo mldiv">
+                        <div class="form-group">
+                            <label for="">Username</label>
+                            <input type="username" class="form-control" name="username" id="" placeholder="Username" required autocomplete="off">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Password</label>
+                            <input type="password" class="form-control" name="password" id="" placeholder="Password" required autocomplete="off">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Confirm Password</label>
+                            <input type="password" class="form-control" name="confirmpassword" id="" placeholder="Confirm Password" required autocomplete="off">
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center btngroup">
+                            <button type="button" class="btn mx-1 btn-sm btnprev btn-link btn-block" data="2">Prev</button>
+                            <button type="button" class="btn mx-1 btn-sm btnnext btn-link btn-block" data="3">Next</button>
+                        </div>
+                    </div>
+                    <div class="profileinfo mldiv">
+                        <div class="form-group d-flex justify-content-center align-items-center">
+                            <img src="" class="profileimage rounded" height="190" width="200">
+                        </div>
+                        <div class="form-group customizeuploaddiv">
+                            <input type="file" class="form-control normalupload" name="profile" id="" required>
+                            <button type="button" class="btn btn-sm customupload btnnext btn-block">Upload</button>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center btngroup">
+                            <button type="button" class="btn mx-1 btn-sm btnprev btn-link btn-block" data="3">Prev</button>
+                            <button type="submit" class="btn mx-1 btn-sm btnsubmit btn-link btn-block">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row justify-content-center align-items-center footer">
+        <p class="text-center text-white">Developed By: <a class="text-warning" href="mailto:ericsoftwaresolutions@gmail.com">Eric Software Solution</a> </p>
+    </div>
+</div>
+    
+<script src="{{url_for('static',filename='scripts/jquery.min.js')}}"></script>
+<script src="{{url_for('static',filename='scripts/js/bootstrap.min.js')}}"></script>
+<script src="{{url_for('static',filename='scripts/register.js')}}"></script>
+</body>
+</html>

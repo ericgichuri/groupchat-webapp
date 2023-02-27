@@ -1,0 +1,41 @@
+.grouprow{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 20px;
+    background-color: white;
+    padding: 3px 5px 3px 5px;
+    box-shadow: 0px 1px 2px gray;
+    margin-bottom: 2px;
+    cursor: pointer;
+    width: 100%;
+    
+}
+.groupnametxt{
+    font-size: 11px;
+    margin: 0;
+    padding: 0;
+    font-weight: 600;
+    text-align: start;
+}
+.groupinfotxt{
+    font-size: 7px;
+    margin: 0;
+    padding: 0;
+}
+
+.btnstatus{
+    height: 30px;
+    width: 100px;
+    background-color: #000088;
+    border: none;
+    outline: none;
+    box-shadow: none !important;
+    color: white;
+}
+.mdgrpname,.mdgrpinfo{
+    font-size: 11px;
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+}

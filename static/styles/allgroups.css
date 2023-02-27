@@ -1,0 +1,98 @@
+.grouprow{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 20px;
+    background-color: white;
+    padding: 3px 5px 3px 5px;
+    box-shadow: 0px 1px 2px gray;
+    margin-bottom: 2px;
+    cursor: pointer;
+}
+.groupnametxt{
+    font-size: 11px;
+    margin: 0;
+    padding: 0;
+    font-weight: 600;
+    text-align: start;
+}
+.groupinfotxt{
+    font-size: 7px;
+    margin: 0;
+    padding: 0;
+}
+.btnmanage,.btntojoin,.btnchat{
+    font-size: 10px;
+    height: 25px;
+    cursor: pointer;
+    background-color: #000088;
+    color: white;
+    box-shadow: none !important;
+    border: none !important;
+    outline: none;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btnmanage{
+    width: 30px;
+}
+.typegroup{
+    font-size: 13px;
+}
+.nogrouptext{
+    font-size: 12px;
+    text-align: center;
+    font-style: italic;
+}
+.pMName,.pMno{
+    font-size: 10px;
+}
+.searchtext.form-control{
+    height: 30px !important;
+    outline: none !important;
+    box-shadow: none !important;
+    border: 1px gray solid;
+    font-size: 11px;
+}
+.searchtext.form-control[placeholder]{
+    font-size: 10px;
+}
+.searchtext.form-control:focus{
+    border: 1px #000088 solid;
+}
+.input-group button{
+    outline: none;
+    box-shadow: none !important;
+    border: 1px solid gray !important;
+}
+.activegroup{
+    background-color: rgba(0, 0, 136, 0.2);
+}
+.badge-all{
+    background-color: #000088;
+    color: white;
+    user-select: none;
+    padding: 2px 4px 2px 4px !important;
+}
+.chklabel{
+    font-size: 10px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.form-check-inline{
+    background-color: #000088;
+    color: white;
+    padding: 5px 10px 4px 10px;
+    cursor: pointer;
+}
+.form-check-input,.form-check-input:checked{
+    background-color: #000088;
+    color: white;
+    height: 16px;
+    width: 16px;
+}
+.displayallgroups{
+    display: block;
+}

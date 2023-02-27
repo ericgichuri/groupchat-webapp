@@ -1,0 +1,98 @@
+<link rel="stylesheet" href="{{url_for('static',filename='styles/css/bootstrap.min.css')}}">
+<link rel="stylesheet" href="{{url_for('static',filename='styles/allgroups.css')}}">
+<div class="row justify-content-center align-items-center">
+    <div class="col-12">
+        <!--<p class="p-0 m-0 typegroup">Manage Groups</p>-->
+        {%if mygroups==""%}
+            <!--<div class="nogrouptext">No group</div>-->
+        {%else%}
+        {%for mygroup in mygroups %}
+            <div class="grouprow grp{{mygroup[0]}}" id="{{mygroup[0]}}">
+                <div class="groupimg groupimg{{mygroup[0]}} mx-1" data-grpimg="{{mygroup[3]}}">
+                    <img src="{{url_for('static',filename='images/groupicons/')}}{{mygroup[3]}}" height="30" width="30" class="rounded-circle" style="object-fit: cover;">
+                </div>
+                <div id="grpinfo{{mygroup[0]}}" data-grpname="{{mygroup[1]}}" data-grpdescrp="{{mygroup[2]}}" class="d-flex grpinfo{{mygroup[0]}} flex-column align-content-center justify-content-start align-items-center">
+                    <div class="grpinfo2">
+                    <div class="groupnametxt m-0 p-0">{{mygroup[1]}}</div>
+                    <div hidden class="groupinfotxt m-0 p-0">{{mygroup[2]}}</div>
+                    </div>
+                </div>
+                <div class="d-flex">
+                    <button class="btn mx-1 btn-sm btnmanage" data="{{mygroup[0]}}"><img src="{{url_for('static',filename='icons/edit.png')}}" height="13" width="13"></button>
+                    <button class="btn mx-1 btn-sm btnchat" data="{{mygroup[0]}}">Chat</button>
+                </div>
+            </div>
+        {%endfor%}
+        {%endif%}
+    </div>
+    <div class="col-12">
+        <!--<p class="p-0 m-0 typegroup">Joined Groups</p>-->
+        {%if joinedgroups==""%}
+            <!--<div class="nogrouptext">No group</div>-->
+        {%else%}
+        {%for joinedgroup in joinedgroups %}
+            <div class="grouprow grp{{joinedgroup[0]}}" id="{{joinedgroup[0]}}">
+                <div class="groupimg groupimg{{joinedgroup[0]}} mx-1" data-grpimg="{{joinedgroup[3]}}">
+                    <img src="{{url_for('static',filename='images/groupicons/')}}{{joinedgroup[3]}}" height="30" width="30" class="rounded-circle" style="object-fit: cover;">
+                </div>
+                <div id="grpinfo{{joinedgroup[0]}}" data-grpname="{{joinedgroup[1]}}" data-grpdescrp="{{joinedgroup[2]}}" class="d-flex grpinfo{{joinedgroup[0]}} flex-column align-content-center justify-content-start align-items-center">
+                    <div>
+                    <div class="groupnametxt m-0 p-0">{{joinedgroup[1]}}</div>
+                    <div hidden class="groupinfotxt m-0 p-0">{{joinedgroup[2]}}</div>
+                    </div>
+                </div>
+                <div>
+                    <button class="btn mx-1 btn-sm btnchat" data="{{joinedgroup[0]}}">Chat</button>
+                </div>
+            </div>
+        {%endfor%}
+        {%endif%}
+    </div>
+    <div class="col-12">
+        {%if joinedgroups==""%}
+            {%for othergroup in othergroups%}
+                {%if othergroup[4]==session['userid']%}
+
+                {%else%}
+                    <div class="grouprow grp{{othergroup[0]}}" id="{{othergroup[0]}}">
+                        <div class="groupimg mx-1">
+                            <img src="{{url_for('static',filename='images/groupicons/')}}{{othergroup[3]}}" height="30" width="30" class="rounded-circle" style="object-fit: cover;">
+                        </div>
+                        <div class="d-flex flex-column align-content-center justify-content-start align-items-center">
+                            <div>
+                            <div class="groupnametxt m-0 p-0">{{othergroup[1]}}</div>
+                            <div hidden class="groupinfotxt m-0 p-0">{{othergroup[2]}}</div>
+                            </div>
+                        </div>
+                        <div>
+                            <button  data-name="{{othergroup[1]}}" class="btn mx-1 btn-sm btntojoin" data="{{othergroup[0]}}">Join</button>
+                        </div>
+                    </div>
+                {%endif%}
+            {%endfor%}
+        {%else%}
+            <div class="mt-2 mb-0">
+                <p class="text-center p-0 m-0 font-weight-bold" style="font-size: 10px;">Search Group</p>
+            </div>
+            <div class="input-group">
+                <input class="form-control searchtext" type="search" placeholder="Search Group">
+                <div class="input-group-append">
+                    <button class="input-group-text btn btnsearch"><img src="{{url_for('static',filename='icons/search.png')}}" height="16" width="16"></button>
+                </div>
+            </div>
+            <div class="form-inline mt-1">
+                <div class="form-check form-check-inline rounded-1">
+                    <label class="chklabel">
+                        <input class="form-check-input" type="checkbox" name="" id="checkall" value="viewall">View All
+                    </label>
+                </div>
+            </div>
+            <div class="displayallgroups">
+
+            </div>
+        {%endif%}
+    </div>
+</div>
+<script src="{{url_for('static',filename='scripts/jquery.min.js')}}"></script>
+<script src="{{url_for('static',filename='scripts/js/bootstrap.min.js')}}"></script>
+<script src="{{url_for('static',filename='scripts/allgroups.js')}}"></script>

@@ -1,0 +1,85 @@
+<link rel="stylesheet" href="{{url_for('static',filename='styles/css/bootstrap.min.css')}}">
+<link rel="stylesheet" href="{{url_for('static',filename='styles/viewgroupmembers.css')}}">
+<div class="row">
+    <div class="col-12">
+        <div class="row viewtitlebar justify-content-center align-items-center">
+            <div class="col-12 px-1">
+                <label class="text-center text-white" style="font-size: 12px;">{{totalmembers}} Members</label>
+            </div>
+        </div>
+    </div>
+    <div class="col-12">
+        <div class="d-flex">
+            {%if groupadmin==""%}
+                <p>No Admin</p>
+            {%else%}
+                {%for grpadm in groupadmin%}
+                    <div class="d-flex memberrow" data="{{grpadm[0]}}">
+                        <div>
+                            <img class="rounded-circle" src="{{url_for('static',filename='images/profiles/')}}{{grpadm[4]}}" height="30" width="30">
+                        </div>
+                        <div class="d-flex mx-3 flex-column">
+                            <div class="membername m-0 p-0">{{grpadm[2]}}</div>
+                            <div class="memberphoneno m-0 p-0">{{grpadm[3]}}</div>
+                        </div>
+                        <div class="d-flex ml-auto  justify-content-center align-items-center">
+                            <label class="badge">Admin</label>
+                        </div>
+                        <div class="mx-1">
+                            <button data-position="Admin" class="btn btnviewmember" data={{grpadm[1]}} data-toggle="modal" data-target="#modelId">view</button>
+                        </div>
+                    </div>
+                {%endfor%}
+            {%endif%}
+        </div>
+        <div class="d-flex flex-column">
+            {%for groupmember in groupmembers%}
+                <div class="d-flex memberrow" data="{{groupmember[0]}}">
+                    <div>
+                        <img class="rounded-circle" src="{{url_for('static',filename='images/profiles/')}}{{groupmember[4]}}" height="30" width="30">
+                    </div>
+                    <div class="d-flex mx-3 flex-column">
+                        <div class="membername m-0 p-0">{{groupmember[2]}}</div>
+                        <div class="memberphoneno m-0 p-0">{{groupmember[3]}}</div>
+                    </div>
+                    <div class="d-flex ml-auto justify-content-center align-items-center">
+                        <label class="badge">Member</label>
+                    </div>
+                    <div class="mx-1">
+                        <button data-position="Member" class="btn btnviewmember" data="{{groupmember[1]}}" data-toggle="modal" data-target="#modelId">view</button>
+                    </div>
+                </div>
+            {%endfor%}
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="modelId" tabindex="-1" role="dialog" style="background-color: rgba(0, 0, 0, 0.2);" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document" style="justify-content: center;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h6 class="modal-title textMpos">Member</h6>
+                <button style="font-size: 20px;" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span style="font-size: 20px !important;" aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="d-flex justify-content-center align-items-center">
+                    <img src="" class="rounded-circle imgMprofile border border-secondary" width="100" height="100">
+                </div>
+                <div class="textuserinfo">
+                    <p class="textMpos">Position: </p>
+                    <p class="textMname">Name: </p>
+                    <p class="textMtel">Tel: </p>
+                    <p class="textMemail">Email: </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="{{url_for('static',filename='scripts/jquery.min.js')}}"></script>
+<script src="{{url_for('static',filename='scripts/js/bootstrap.min.js')}}"></script>
+<script src="{{url_for('static',filename='scripts/viewgroupmembers.js')}}"></script>

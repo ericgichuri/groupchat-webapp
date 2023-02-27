@@ -1,0 +1,56 @@
+<link rel="stylesheet" href="{{url_for('static',filename='styles/css/bootstrap.min.css')}}">
+<link rel="stylesheet" href="{{url_for('static',filename='styles/searchedgroup.css')}}">
+<div class="row justify-content-center align-items-center">
+    <div class="col-12">
+        {%if searchallgroups==""%}
+        <p class="alert alert-warning text-center p-0 px-2 m-0" style="font-size: 10px;width: 100%;">No group found</p>
+        {%else%}
+            {%for srchgroup in searchallgroups%}
+                <div class="grouprow d-flex justify-content-start btnviewgrp" data="{{srchgroup[0]}}" data-grpN="{{srchgroup[1]}}" data-grpIn="{{srchgroup[2]}}" data-grpImg="{{srchgroup[3]}}"><!-- data-toggle="modal" data-target="#modelviewgroup"-->
+                    <div class="groupimg mx-1">
+                        <img src="{{url_for('static',filename='images/groupicons/')}}{{srchgroup[3]}}" height="30" width="30" class="rounded-circle" style="object-fit: cover;">
+                    </div>
+                    <div class="d-flex flex-column align-content-center justify-content-start align-items-center">
+                        <div>
+                            <div class="groupnametxt m-0 p-0">{{srchgroup[1]}}</div>
+                            <div hidden class="groupinfotxt m-0 p-0">{{srchgroup[2]}}</div>
+                        </div>
+                    </div>
+                </div>
+            {%endfor%}
+        {%endif%}
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal" id="modelviewgroup" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true" style="background-color: rgba(0, 0, 0,0.5);transition: 0.5s;">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+                <div class="modal-header">
+                        <h6 class="modal-title">Group Info</h6>
+                            <button type="button" class="close closemodal" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true" style="font-size: 16px;">&times;</span>
+                            </button>
+                    </div>
+            <div class="modal-body">
+                <div class="modaltext">
+                    <div class="d-flex justify-content-start align-items-center">
+                        <img class="mdgrpimg rounded-circle" src="" width="100" height="100">
+                        <div class="mx-3">
+                            <p class="mdgrpname">Group Name</p>
+                            <p class="mdgrpinfo">Group Info</p>
+                            <div class="d-flex justify-content-start mt-2 align-items-center">
+                                <button class="btnstatus btn mx-2" data="" databtngroupid="">Info</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+<script src="{{url_for('static',filename='scripts/jquery.min.js')}}"></script>
+<script src="{{url_for('static',filename='scripts/js/bootstrap.min.js')}}"></script>
+<script src="{{url_for('static',filename='scripts/searchedgroup.js')}}"></script>

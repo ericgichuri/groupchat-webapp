@@ -1,0 +1,181 @@
+body{
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+.container-fluid{
+    height: 100vh;
+    width: 100%;
+    overflow-y: auto;
+}
+.container-fluid .row.header{
+    height: 7vh;
+    background-color: #000088;
+}
+.container-fluid .row.maincontainer{
+    height: 90vh;
+}
+.container-fluid .row.footer{
+    height: 3vh;
+    background-color: #000088;
+}
+.container-fluid .row.maincontainer .coldiv{
+    height: 100%;
+    overflow-y: auto;
+}
+.coldiv.chats{
+    border-right: 2px solid #000088;
+    border-left: 2px solid #000088;
+}
+.row.footer p{
+    font-size: 10px;
+}
+.menu{
+    position: relative;
+    margin-right: 0 !important;
+    padding-right: 3px;
+}
+.menu .sidemenu{
+    position: absolute;
+    width: 150px;
+    right: 0;
+    top: -25vh;
+    margin-right: 0 !important;
+    background-color: #000088;
+    z-index: 90;
+    transition: 0.4s ease-in;
+}
+.menu .sidemenu .btnlist{
+    width: 100%;
+    line-height: 30px;
+    margin: 0;
+    border-bottom: 1px solid white;
+    cursor: pointer;
+    color: white;
+    font-size: 12px;
+    text-align: center;
+}
+.menu .sidemenu .btnlist:hoverr{
+    background-color: blue;
+}
+.btndropdown{
+    cursor: pointer;
+    z-index: 100;
+}
+.btndropdown img{
+    transition: 0.5s;
+}
+.btndropdown img.toggle{
+    transform: rotate(180deg);
+}
+.menu .sidemenu.hide{
+    top: 5vh;
+}
+
+.groups .btnaddgroup{
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000088;
+    color: white;
+    cursor: pointer;
+    border: none !important;
+    box-shadow: none !important;
+    font-size: 12px !important;
+}
+.listdivmembers{
+    display: flex !important;
+    align-items: center;
+    background-color: white;
+    padding: 3px 5px 3px 5px;
+    box-shadow: 0px 1px 2px gray;
+    margin-bottom: 2px;
+    cursor: pointer;
+}
+.pMName{
+    font-size: 10px;
+    font-weight: 600;
+}
+.pMNo{
+    font-size: 10px;
+}
+button{
+    font-size: 10px !important;
+}
+.chatgrpinfo{
+    height: 7vh;
+    background-color: #000088;
+    color: white;
+    width: 100%;
+    position: relative;
+    overflow-y: hidden;
+}
+.chatgrpname{
+    font-size: 11px;
+    font-weight: bold;
+}
+.chatgrpdescrp{
+    font-size: 9px;
+    font-weight: 500;
+}
+.divchatform{
+    position: absolute;
+    height: 5vh;
+    bottom: 0vh;
+    width: 100%;
+    padding: 1px 2px 1px 2px;
+    padding-top: 5px;
+    padding-top: 2px;
+}
+.form-control{
+    border: 1px solid gray !important;
+    box-shadow: none !important;
+    height: 30px !important;
+}
+.form-control[placeholder]{
+    font-size: 12px;
+}
+.form-control:focus{
+    border: 1px solid #000088 !important;
+}
+.input-group-append button{
+    outline: none !important;
+    border: 1px solid #000088;
+    box-shadow: none !important;
+    height: 30px !important;
+}
+.chatdivdiv{
+    overflow-y: hidden;
+    height: 100%;
+}
+.divchatarea{
+    height: 87%;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: absolute;
+    top: 7vh;
+}
+.inpfile{
+    width: 40px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.custombtn{
+    position: absolute;
+    width: 40px;
+    height: 30px;
+    z-index: 200;
+    opacity: 0 !important;
+}
+.bioinfo div p{
+    font-size: 12px;
+    font-weight: 600;
+    margin: 0;
+    padding: 0;
+}

@@ -1,0 +1,44 @@
+<link rel="stylesheet" href="{{url_for('static',filename='styles/css/bootstrap.min.css')}}">
+<link rel="stylesheet" href="{{url_for('static',filename='styles/chatarea.css')}}">
+<div class="row justify-content-center">
+    <div class="col-12">
+        <div class="row p-2 justify-content-center">
+        {%if groupchats==""%}
+        <p class="alert alert-warning text-center p-0 px-2 m-0" style="font-size: 10px;width: 200px;">No chat on this group</p>
+        {%else%}
+        {%for grpchat in groupchats%}
+        <div class="chatholder1 px-1" style="width: 100%;">
+            {%if grpchat[2]!=session['userid']%}
+                <div class="d-flex othechats bg-dark flex-column text-white" style="width: 250px;">
+                    <div class="d-flex justify-content-between senderlables px-2"><label class="sendername">{{grpchat[8]}}</label><label class="senderphoneno">{{grpchat[9]}}</label></div>
+                    {%if grpchat[4]!=""%}
+                    <div class="d-flex justify-content-start px-3 align-items-center">
+                        <a class="fileviewdownload" target="_blank" href="static/media/{{grpchat[4]}}"><img src="{{url_for('static',filename='icons/download.png')}}" height="16" width="16">{{grpchat[4]}}</a>
+                    </div>
+                    {%endif%}
+                    <div class="messagetext px-3 py-1">
+                        {{grpchat[3]}}
+                    </div>
+                    <div class="d-flex datelables justify-content-between px-2"><label>{{grpchat[6]}}</label><label>{{grpchat[5]}}</label></div>
+                </div>
+            {%else%}
+                <div class="d-flex mychats flex-column text-white" style="width: 250px;">
+                    <div class="d-flex justify-content-between senderlables px-2"><label class="sendername">{{grpchat[8]}}</label><label class="senderphoneno">{{grpchat[9]}}</label></div>
+                    {%if grpchat[4]!=""%}
+                    <div class="d-flex justify-content-start px-3 align-items-center">
+                        <a class="fileviewdownload" target="_blank" href="static/media/{{grpchat[4]}}"><img src="{{url_for('static',filename='icons/download.png')}}" height="16" width="16">{{grpchat[4]}}</a>
+                    </div>
+                    {%endif%}
+                    <div class="messagetext px-3 py-1">
+                        {{grpchat[3]}}
+                    </div>
+                    <div class="d-flex datelables justify-content-between px-2"><label>{{grpchat[6]}}</label><label>{{grpchat[5]}}</label></div>
+                </div>
+            {%endif%}
+        </div>
+        {%endfor%}
+        {%endif%}
+
+        </div>
+    </div>
+</div>

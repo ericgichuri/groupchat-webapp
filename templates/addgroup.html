@@ -1,0 +1,50 @@
+<link rel="stylesheet" href="{{url_for('static',filename='styles/css/bootstrap.min.css')}}">
+<link rel="stylesheet" href="{{url_for('static',filename='styles/addgroup.css')}}">
+<div class="row">
+    <div class="col-12">
+        <div class="row divheader justify-content-between align-items-center">
+            <div class="col-9 px-1">
+                <label class="text-center text-white" style="font-size: 12px;">Add Group</label>
+            </div>
+            <div class="col-2 px-1">
+                <button class="btn btnclose"><img src="{{url_for('static',filename='icons/close.png')}}" width="16" height="16"></button>
+            </div>
+        </div>
+    </div>
+    <div class="col-12">
+        <div class="row justify-content-between align-items-center">
+            <div class="col-12">
+                <form class="formaddgroup" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <div class="d-flex justify-content-center align-items-center mb-2 p-1">
+                            <img src="" height="120" width="120" class="rounded-circle groupiconpreview" style="object-fit: cover;">
+                        </div>
+                        
+                        <div class="uploadholder d-flex justify-content-center align-items-center">
+                            <input type="file" name="groupicon" id="" class="form-control btndefaultupload">
+                            <button type="button" class="btn btn-sm btncustomupload">select photo</button>
+                        </div>
+                    </div>
+                    <div class="input-group my-2">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Group Name</span>
+                        </div>
+                        <input type="text" name="groupname" id="" class="form-control" placeholder="Group Name">
+                    </div>
+                    <div class="input-group my-2">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Group Info</span>
+                        </div>
+                        <input type="text" name="groupinfo" id="" class="form-control" placeholder="Group Description">
+                    </div>
+                    <div class="row justify-content-center align-items-center p-3 my-2">
+                        <button class="btn btnsubmit" type="submit">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="{{url_for('static',filename='scripts/jquery.min.js')}}"></script>
+<script src="{{url_for('static',filename='scripts/js/bootstrap.min.js')}}"></script>
+<script src="{{url_for('static',filename='scripts/addgroup.js')}}"></script>

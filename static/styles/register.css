@@ -1,0 +1,94 @@
+body{
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    width: 100%;
+}
+.container-fluid{
+    height: 100vh;
+    width: 100%;
+    overflow-y: auto;
+}
+.container-fluid .row.header{
+    height: 7vh;
+    background-color: #000088;
+}
+.container-fluid .row.maincontainer{
+    height: 90vh;
+}
+.container-fluid .row.footer{
+    height: 3vh;
+    background-color: #000088;
+}
+.row.footer p{
+    font-size: 10px;
+}
+.form{
+    border: 1px solid #000088;
+}
+.form .btnsubmit{
+    background: #000088;
+    color: white;
+}
+.form .form-group .form-control{
+    outline: none;
+    box-shadow: none;
+    border: 1px solid gray;
+}
+.form .form-group .form-control:focus{
+    border: 1px solid #000088;
+}
+.form .mlform{
+    display: flex;
+}
+.form .mlform .mldiv{
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+.form .mlform .mldiv.divactive{
+    display: block;
+}
+.btngroup{
+    height: 50px;
+}
+.btnnext,.btnprev,.btnhelp{
+    border: 1px solid #000088 !important;
+    height: 35px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    margin-left: 4px !important;
+    margin-right: 4px !important;
+}
+.btnnext:hover,.btnprev:hover,.btnhelp:hover{
+    border: 1px solid #000088 !important;    
+}
+.btnsubmit{
+    height: 35px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    margin-left: 4px !important;
+    margin-right: 4px !important;
+}
+.customizeuploaddiv{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.normalupload{
+    position: absolute;
+    height: 35px;
+    cursor: pointer;
+    width: 200px !important;
+    opacity: 0;
+}
+.customupload{
+    height: 35px;
+    background-color: #000088;
+    color: white;
+    width: 200px !important;
+}
+.profileimage{
+    object-fit: cover;
+}

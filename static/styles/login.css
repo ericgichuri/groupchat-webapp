@@ -1,0 +1,39 @@
+body{
+    padding: 0;
+    margin: 0;
+    height: 100vh;
+    width: 100%;
+}
+.container-fluid{
+    height: 100vh;
+    width: 100%;
+}
+.container-fluid .row.header{
+    height: 7vh;
+    background-color: #000088;
+}
+.container-fluid .row.maincontainer{
+    height: 90vh;
+}
+.container-fluid .row.footer{
+    height: 3vh;
+    background-color: #000088;
+}
+.row.footer p{
+    font-size: 10px;
+}
+.form{
+    border: 1px solid #000088;
+}
+.form .btnsubmit{
+    background: #000088;
+    color: white;
+}
+.form .form-group .form-control{
+    outline: none;
+    box-shadow: none;
+    border: 1px solid gray;
+}
+.form .form-group .form-control:focus{
+    border: 1px solid #000088;
+}

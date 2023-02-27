@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{{url_for('static',filename='icons/groupchat.png')}}" type="image/x-icon">
+    <link rel="stylesheet" href="{{url_for('static',filename='styles/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='styles/login.css')}}">
+    <title>Group Chat | Login</title>
+</head>
+<body>
+
+<div class="container-fluid">
+    <div class="row header justify-content-between align-items-center">
+        <div class="col-3 appinfo d-flex">
+            <div class="applogo px-2">
+                <img class="rounded-circle" src="{{url_for('static',filename='icons/groupchat.png')}}" height="30" width="30">
+            </div>
+            <div class="appname text-white px-2">Group Chat</div>
+        </div>
+        <div class="col-7 userinfo">
+            <div class="row justify-content-end px-2">
+                <button class="btn btn_to_signup btn-link btn-sm text-white">Sign Up</button>
+            </div>
+        </div>
+    </div>
+    <div class="row maincontainer justify-content-center align-items-center">
+        <div class="col-md-5">
+            <form class="form p-5" enctype="multipart/form-data" method="post">
+                <div class="d-flex justify-content-center align-items-center flex-column">
+                    <div>
+                        <img src="{{url_for('static',filename='icons/user.png')}}" height="20" width="20">
+                    </div>
+                    <h6 class="text-center">-- User Login --</h6>
+                    <p class="p-0 m-0 flashmessage text-center">Fill in every field</p>
+                </div>
+                <div class="form-group">
+                  <label for="">Email Address:</label>
+                  <input type="email" class="form-control" name="email" id="" placeholder="username@gmail.com" required autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <label for="">Password:</label>
+                    <input type="password" class="form-control" name="password" id="" placeholder="Password" required autocomplete="off">
+                </div>
+                <div class="form-group">
+                    <p class="text-end"><a href="">Forgot Password?</a></p>
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-sm btnsubmit btn-block">Login</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row justify-content-center align-items-center footer">
+        <p class="text-center text-white">Developed By: <a class="text-warning" href="mailto:ericsoftwaresolutions@gmail.com">Eric Software Solution</a> </p>
+    </div>
+</div>
+
+<script src="{{url_for('static',filename='scripts/jquery.min.js')}}"></script>
+<script src="{{url_for('static',filename='scripts/js/bootstrap.min.js')}}"></script>
+<script src="{{url_for('static',filename='scripts/login.js')}}"></script>
+</body>
+</html>
